@@ -37,7 +37,7 @@
 //                      │ FN  │ BSPC  │  SPC  │   │  ENT  │  BSPC │ NUM │
 //                      │     │       │ SHIFT │   │ SHIFT │       │     │
 //                      └─────┴───────┴───────┘   └───────┴───────┴─────┘
-                        display-name = "Base";
+                        display-name = "Dvorak";
                         bindings = <
    &bootloader   &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y             &kp F         &kp G         &kp C         &kp R         &kp L         &kp LG(LC(Q))
    &kp TAB       &lt 3 A       &hm LCTRL O   &hm LALT E    &hm LGUI U    &kp I             &kp D         &hm RGUI H    &hm RALT T    &hm RCTRL N   &lt 3 S       &kp LC(SPACE)
@@ -55,7 +55,7 @@
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┤─────┴─────┴─────┘
 //                   │ --- │ --- │ --- │   │ --- │ --- │ --- │
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
-                        display-name = "Num+Sym";
+                        display-name = "Numbers";
                         bindings = <
    &none         &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT         &kp CARET     &kp AMPS      &kp ASTRK     &kp MINUS     &kp EQUAL     &none
    &none         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5            &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &none
@@ -74,7 +74,7 @@
 // └────────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼──────┼──────┤──────┴─────┴──────┘
 //                      │ --- │ --- │ --- │   │ --- │ ---  │ ---- │
 //                      └─────┴─────┴─────┘   └─────┴──────┴──────┘
-                        display-name = "FN+Media";
+                        display-name = "Func";
                         bindings = <
    &kp PG_UP     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &none         &bt BT_CLR
    &kp HOME      &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &none         &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &none         &none
@@ -93,7 +93,7 @@
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┤─────┴─────┴─────┘
 //                   │ ⌘+Z │ ⌘+V │ ⌘+C │   │LCLK │RCLK │MCLK │
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
-                        display-name = "Movement";
+                        display-name = "Nav";
                         bindings = <
    &none         &none         &none         &kp UP        &none         &none             &msc SCRL_UP  &none         &mmv MOVE_UP  &none         &none         &none
    &none         &none         &kp LEFT      &kp DOWN      &kp RIGHT     &none             &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none      &none
