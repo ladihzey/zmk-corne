@@ -84,9 +84,9 @@
 
                 movement_layer {
 // ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-// │ --- │ --- │ --- │ UP  │ --- │ --- │   │ SCR↑│ --- │ M↑  │ --- │ --- │ --- │
+// │ --- │ --- │ --- │ UP  │ --- │ --- │   │ --- │ --- │ --- │ --- │ --- │ --- │
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ --- │ --- │LEFT │DOWN │RIGHT│ --- │   │ SCR↓│ M←  │ M↓  │ M→  │ --- │ --- │
+// │ --- │ --- │LEFT │DOWN │RIGHT│ --- │   │ --- │ --- │ --- │ --- │ --- │ --- │
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 // │ --- │ --- │ --- │ --- │ --- │ --- │   │ --- │ --- │ --- │ --- │ --- │ --- │
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┤─────┴─────┴─────┘
@@ -94,8 +94,8 @@
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
                         display-name = "Movement";
                         bindings = <
-   &trans        &trans        &trans        &kp UP        &trans        &trans            &msc SCRL_UP  &trans        &mmv MOVE_UP  &trans        &trans        &trans
-   &trans        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans            &msc SCRL_DN  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans      &trans
+   &trans        &trans        &trans        &kp UP        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
+   &trans        &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans            &trans        &trans        &trans        &trans        &trans        &trans
    &trans        &trans        &trans        &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
                                              &kp LG(Z)     &kp LG(V)     &kp LG(C)         &trans        &trans        &trans
                         >;
