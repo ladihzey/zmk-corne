@@ -25,7 +25,7 @@
                 lang_qwerty_toggle: lang_qwerty_toggle {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp LC(SPACE)>, <&tog 4>;
+                        bindings = <&kp LC(SPACE) &tog 4>;
                         wait-ms = <30>;
                         tap-ms = <30>;
                 };
