@@ -39,16 +39,6 @@
                 };
         };
 
-        // The following settings override the default mouse movement and scroll behavior
-        &mmv {
-            time-to-max-speed-ms = <250>;  // default: 300
-            acceleration-exponent = <2>;   // default: 1
-        };
-        &msc {
-            time-to-max-speed-ms = <100>;  // default: 300
-            acceleration-exponent = <1>;   // default: 0
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
@@ -175,4 +165,15 @@
                         status = "reserved";
                 };
         };
+};
+
+// Mouse behavior overrides (must be outside the main devicetree root)
+&mmv {
+    time-to-max-speed-ms = <250>;  // default: 300
+    acceleration-exponent = <2>;   // default: 1
+};
+
+&msc {
+    time-to-max-speed-ms = <100>;  // default: 300
+    acceleration-exponent = <1>;   // default: 0
 };
