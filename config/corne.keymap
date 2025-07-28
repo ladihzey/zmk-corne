@@ -56,10 +56,10 @@
 //                      └─────┴───────┴───────┘   └───────┴───────┴─────┘
                         display-name = "Dvorak";
                         bindings = <
-   &bootloader   &kp SQT       &kp COMMA     &kp DOT       &kp P         &kp Y             &kp F         &kp G         &kp C         &kp R         &kp L         &kp LG(LC(Q))
-   &kp TAB       &lt 2 A       &hm LCTRL O   &hm LALT E    &hm LGUI U    &kp I             &kp D         &hm RGUI H    &hm RALT T    &hm RCTRL N   &lt 2 S       &kp LC(SPACE)
-   &kp ESC       &kp SEMI      &kp Q         &kp J         &kp K         &kp X             &kp B         &kp M         &kp W         &kp V         &kp Z         &to 1
-                                             &mo 4         &kp BSPC      &hm LSHFT SPACE   &hm RSHFT RET &kp BSPC      &mo 3
+   &bootloader    &kp SQT        &kp COMMA      &kp DOT        &kp P          &kp Y              &kp F          &kp G          &kp C          &kp R          &kp L          &kp LG(LC(Q))
+   &kp TAB        &lt 2 A        &hm LCTRL O    &hm LALT E     &hm LGUI U     &kp I              &kp D          &hm RGUI H     &hm RALT T     &hm RCTRL N    &lt 2 S        &kp LC(SPACE)
+   &kp ESC        &kp SEMI       &kp Q          &kp J          &kp K          &kp X              &kp B          &kp M          &kp W          &kp V          &kp Z          &to 1
+                                                &mo 4          &kp BSPC       &hm LSHFT SPACE    &hm RSHFT RET  &kp BSPC       &mo 3
                         >;
                 };
 
@@ -89,29 +89,29 @@
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
                         display-name = "QWERTY";
                         bindings = <
-   &none         &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp LBKT
-   &kp TAB       &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L         &kp SEMI      &kp SQT
-   &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &ru_soft      &kp COMMA     &kp DOT       &ru_punct     &to 0
-                                             &mo 4         &kp BSPC      &hm LSHFT SPACE   &hm RSHFT RET &kp BSPC      &mo 3
+   &none          &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U          &kp I          &kp O          &kp P          &kp LBKT
+   &kp TAB        &kp A          &kp S          &kp D          &kp F          &kp G              &kp H          &kp J          &kp K          &kp L          &kp SEMI       &kp SQT
+   &kp ESC        &kp Z          &kp X          &kp C          &kp V          &kp B              &kp N          &ru_soft       &kp COMMA      &kp DOT        &ru_punct      &to 0
+                                                &mo 4          &kp BSPC       &hm LSHFT SPACE    &hm RSHFT RET  &kp BSPC       &mo 3
                         >;
                 };
 
                 movement_layer {
 // ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-// │ --- │ --- │ --- │ UP  │ --- │ --- │   │SCR↑ │ --- │ M↑  │ --- │ --- │ --- │
+// │ --- │ --- │ --- │ UP  │ --- │PG↑  │   │SCR↑ │ --- │ M↑  │ --- │ --- │ --- │
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ --- │ --- │LEFT │DOWN │RIGHT│ --- │   │SCR↓ │ M←  │ M↓  │ M→  │ --- │ --- │
+// │ --- │ --- │LEFT │DOWN │RIGHT│PG↓  │   │SCR↓ │ M←  │ M↓  │ M→  │ --- │ --- │
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ --- │ --- │ --- │ --- │ --- │ --- │   │ --- │ SC← │ --- │ SC→ │ --- │ --- │
+// │ --- │ --- │HOME │ --- │ END │ --- │   │ --- │ SC← │ --- │ SC→ │ --- │ --- │
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
 //                   │ ⌘+Z │ ⌘+V │ ⌘+C │   │LCLK │RCLK │MCLK │
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
                         display-name = "Nav";
                         bindings = <
-   &none         &none         &none         &kp UP        &none         &none             &msc SCRL_UP    &none         &mmv MOVE_UP    &none         &none         &none
-   &none         &none         &kp LEFT      &kp DOWN      &kp RIGHT     &none             &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none      &none
-   &none         &none         &none         &none         &none         &none             &none         &msc SCRL_LEFT  &none         &msc SCRL_RIGHT &none         &none
-                                             &kp LG(Z)     &kp LG(V)     &kp LG(C)         &mkp LCLK     &mkp RCLK     &mkp MCLK
+   &none          &none          &none          &kp UP         &none          &kp PG_UP          &msc SCRL_UP     &none            &mmv MOVE_UP     &none            &none      &none
+   &none          &none          &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN          &msc SCRL_DOWN   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none      &none
+   &none          &none          &kp HOME       &none          &kp END        &none              &none            &msc SCRL_LEFT   &none            &msc SCRL_RIGHT  &none      &none
+                                                &kp LG(Z)      &kp LG(V)      &kp LG(C)          &mkp LCLK        &mkp RCLK        &mkp MCLK
                         >;
                 };
 
@@ -127,29 +127,29 @@
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
                         display-name = "Numbers";
                         bindings = <
-   &none         &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT         &kp CARET     &kp AMPS      &kp ASTRK     &kp MINUS     &kp EQUAL     &none
-   &none         &kp N1        &kp N2        &kp N3        &kp N4        &kp N5            &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &none
-   &none         &kp FSLH      &kp LBRC      &kp LBKT      &kp LPAR      &kp GRAVE         &kp TILDE     &kp RPAR      &kp RBKT      &kp RBRC      &kp BSLH      &none
-                                             &trans        &trans        &trans            &trans        &trans        &trans
+   &none          &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &kp PRCNT          &kp CARET      &kp AMPS       &kp ASTRK      &kp MINUS      &kp EQUAL      &none
+   &none          &kp N1         &kp N2         &kp N3         &kp N4         &kp N5             &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
+   &none          &kp FSLH       &kp LBRC       &kp LBKT       &kp LPAR       &kp GRAVE          &kp TILDE      &kp RPAR       &kp RBKT       &kp RBRC       &kp BSLH       &none
+                                                &trans         &trans         &trans             &trans         &trans         &trans
                         >;
                 };
 
                 function_media_layer {
 // ┌────────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬──────┬──────┬──────┬─────┬──────┐
-// │ PG UP  │ F1  │ F2  │ F3  │ F4  │ F5  │   │ --- │ PREV │ PLAY │ NEXT │ --- │BT CLR│
+// │ ----   │ F1  │ F2  │ F3  │ F4  │ F5  │   │ --- │ PREV │ PLAY │ NEXT │ --- │BT CLR│
 // ├────────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼──────┼──────┼──────┼─────┼──────┤
-// │ HOME   │ F6  │ F7  │ F8  │ F9  │ F10 │   │ --- │ VOL- │ MUTE │ VOL+ │ --- │ BT 1 │
+// │ ----   │ F6  │ F7  │ F8  │ F9  │ F10 │   │ --- │ VOL- │ MUTE │ VOL+ │ --- │ BT 1 │
 // ├────────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼──────┼──────┼──────┼─────┼──────┤
-// │ PG DN  │ F11 │ F12 │ F13 │ F14 │ F15 │   │ --- │ BRI- │ ---- │ BRI+ │ --- │ BT 2 │
+// │ ----   │ F11 │ F12 │ F13 │ F14 │ F15 │   │ --- │ BRI- │ ---- │ BRI+ │ --- │ BT 2 │
 // └────────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼──────┼──────┼──────┴─────┴──────┘
 //                      │ --- │ --- │ --- │   │ --- │ ---  │ ---- │
 //                      └─────┴─────┴─────┘   └─────┴──────┴──────┘
                         display-name = "Func";
                         bindings = <
-   &kp PG_UP     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5            &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &none         &bt BT_CLR
-   &kp HOME      &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &none         &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &none         &bt BT_SEL 0
-   &kp PG_DN     &kp F11       &kp F12       &kp F13       &kp F14       &kp F15           &none         &kp C_BRI_DN  &none         &kp C_BRI_UP  &none         &bt BT_SEL 1
-                                             &trans        &trans        &trans            &trans        &trans        &trans
+   &none          &kp F1         &kp F2         &kp F3         &kp F4         &kp F5             &none          &kp C_PREV     &kp C_PP       &kp C_NEXT     &none       &bt BT_CLR
+   &none          &kp F6         &kp F7         &kp F8         &kp F9         &kp F10            &none          &kp C_VOL_DN   &kp C_MUTE     &kp C_VOL_UP   &none       &bt BT_SEL 0
+   &none          &kp F11        &kp F12        &kp F13        &kp F14        &kp F15            &none          &kp C_BRI_DN   &none          &kp C_BRI_UP   &none       &bt BT_SEL 1
+                                                &trans         &trans         &trans             &trans         &trans         &trans
                         >;
                 };
 
