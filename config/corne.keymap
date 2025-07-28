@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 900   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 17    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800   // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15    // default: 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -170,10 +170,10 @@
 // Mouse behavior overrides (must be outside the main devicetree root)
 &mmv {
     time-to-max-speed-ms = <250>;  // default: 300
-    acceleration-exponent = <2>;   // default: 1
+    acceleration-exponent = <1>;   // default: 1
 };
 
 &msc {
     time-to-max-speed-ms = <100>;  // default: 300
-    acceleration-exponent = <1>;   // default: 0
+    acceleration-exponent = <0>;   // default: 0
 };
