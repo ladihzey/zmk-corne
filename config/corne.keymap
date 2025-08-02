@@ -44,22 +44,21 @@
 
                 default_layer {
 // ┌────────┬─────┬─────┬─────┬───────┬───────┐   ┌───────┬───────┬─────┬─────┬─────┬──────┐
-// │  BOOT  │  '  │  ,  │  .  │   P   │   Y   │   │   F   │  G    │  C  │  R  │  L  │ LOCK │
+// │  BOOT  │  '  │  ,  │  .  │   P   │   Y   │   │   F   │   G   │  C  │  R  │  L  │ LOCK │
 // ├────────┼─────┼─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┼─────┼──────┤
-// │  TAB   │  A  │  O  │  E  │   U   │   I   │   │   D   │  H    │  T  │  N  │  S  │ LANG │
-// │        │ MOV │CTRL │ ALT │  GUI  │       │   │       │ GUI   │ ALT │CTRL │ MOV │      │
+// │  TAB   │  A  │  O  │  E  │   U   │   I   │   │   D   │   H   │  T  │  N  │  S  │ LANG │
+// │        │ MOV │CTRL │ ALT │  GUI  │ SHIFT │   │ SHIFT │  GUI  │ ALT │CTRL │ MOV │      │
 // ├────────┼─────┼─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┼─────┼──────┤
-// │  ESC   │  ;  │  Q  │  J  │   K   │   X   │   │   B   │  M    │  W  │  V  │  Z  │QWRTY │
+// │  ESC   │  ;  │  Q  │  J  │   K   │   X   │   │   B   │   M   │  W  │  V  │  Z  │QWRTY │
 // └────────┴─────┴─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┴─────┴──────┘
 //                      │ FN  │ BSPC  │  SPC  │   │  ENT  │  BSPC │ NUM │
-//                      │     │       │ SHIFT │   │ SHIFT │       │     │
 //                      └─────┴───────┴───────┘   └───────┴───────┴─────┘
                         display-name = "Dvorak";
                         bindings = <
    &bootloader    &kp SQT        &kp COMMA      &kp DOT        &kp P          &kp Y              &kp F          &kp G          &kp C          &kp R          &kp L          &kp LG(LC(Q))
-   &kp TAB        &lt 2 A        &hm LCTRL O    &hm LALT E     &hm LGUI U     &kp I              &kp D          &hm RGUI H     &hm RALT T     &hm RCTRL N    &lt 2 S        &kp LC(SPACE)
+   &kp TAB        &lt 2 A        &hm LCTRL O    &hm LALT E     &hm LGUI U     &hm SHIFT I        &hm SHIFT D    &hm RGUI H     &hm RALT T     &hm RCTRL N    &lt 2 S        &kp LC(SPACE)
    &kp ESC        &kp SEMI       &kp Q          &kp J          &kp K          &kp X              &kp B          &kp M          &kp W          &kp V          &kp Z          &to 1
-                                                &mo 4          &kp BSPC       &hm LSHFT SPACE    &hm RSHFT RET  &kp BSPC       &mo 3
+                                                &mo 4          &kp BSPC       &kp SPACE          &kp RET        &kp BSPC       &mo 3
                         >;
                 };
 
