@@ -24,18 +24,13 @@
                         bindings = <&kp>, <&kp>;
                 };
 
-                ru_soft: russian_soft_hard_sign {
+                dk: double_key {
                         compatible = "zmk,behavior-tap-dance";
-                        #binding-cells = <0>;
+                        #binding-cells = <2>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp M>, <&kp RBKT>;
-                };
-
-                ru_punct: russian_dot_comma {
-                        compatible = "zmk,behavior-tap-dance";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&kp AMPS>, <&kp CARET>;
+                        bindings = <&kp>, <&kp>;
+                        // Usage: &dk FIRST_KEY SECOND_KEY
+                        // Single tap = FIRST_KEY, Double tap = SECOND_KEY
                 };
         };
 
@@ -102,10 +97,10 @@
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
                         display-name = "QWERTY";
                         bindings = <
-   &none          &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U          &kp I          &kp O          &kp P          &kp LBKT
-   &kp TAB        &kp A          &kp S          &kp D          &kp F          &kp G              &kp H          &kp J          &kp K          &kp L          &kp SEMI       &kp SQT
-   &kp ESC        &kp Z          &kp X          &kp C          &kp V          &kp B              &kp N          &ru_soft       &kp COMMA      &kp DOT        &ru_punct      &to_dvorak_lang
-                                                &mo 4          &kp BSPC       &hm LSHFT SPACE    &hm RSHFT RET  &kp BSPC       &mo 3
+   &none          &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U         &kp I        &kp O      &kp P             &kp LBKT
+   &kp TAB        &kp A          &kp S          &kp D          &kp F          &kp G              &kp H          &kp J         &kp K        &kp L      &kp SEMI          &kp SQT
+   &kp ESC        &kp Z          &kp X          &kp C          &kp V          &kp B              &kp N          &dk M RBKT    &kp COMMA    &kp DOT    &dk AMPS CARET    &to_dvorak_lang
+                                                &mo 4          &kp BSPC       &hm LSHFT SPACE    &hm RSHFT RET  &kp BSPC      &mo 3
                         >;
                 };
 
