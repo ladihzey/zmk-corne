@@ -104,14 +104,14 @@
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
 // │ --- │ --- │HOME │ --- │ END │ --- │   │ --- │ SC← │ --- │ SC→ │ --- │ --- │
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-//                   │ ⌘+Z │ ⌘+V │ ⌘+C │   │LCLK │RCLK │MCLK │
+//                   │ ⌘+X │ ⌘+C │ ⌘+V │   │LCLK │RCLK │MCLK │
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
                         display-name = "Nav";
                         bindings = <
    &none          &none          &none          &kp UP         &none          &kp PG_UP          &msc SCRL_UP     &none            &mmv MOVE_UP     &none            &none      &none
    &none          &none          &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN          &msc SCRL_DOWN   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none      &none
    &none          &none          &kp HOME       &none          &kp END        &none              &none            &msc SCRL_LEFT   &none            &msc SCRL_RIGHT  &none      &none
-                                                &kp LG(Z)      &kp LG(V)      &kp LG(C)          &mkp LCLK        &mkp RCLK        &mkp MCLK
+                                                &kp LG(X)      &kp LG(C)      &kp LG(V)          &mkp LCLK        &mkp RCLK        &mkp MCLK
                         >;
                 };
 
