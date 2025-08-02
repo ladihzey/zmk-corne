@@ -13,45 +13,44 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-        behaviors {
-                hm: homerow_mods {
-                        compatible = "zmk,behavior-hold-tap";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <280>;
-                        quick-tap-ms = <175>;
-                        require-prior-idle-ms = <150>;
-                        flavor = "tap-preferred";
-                        bindings = <&kp>, <&kp>;
-                };
-
-                dk: double_key {
-                        compatible = "zmk,behavior-tap-dance";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <200>;
-                        bindings = <&kp>, <&kp>;
-                        // Usage: &dk FIRST_KEY SECOND_KEY
-                        // Single tap = FIRST_KEY, Double tap = SECOND_KEY
-                };
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
 
-        macros {
-                to_qwerty_lang: to_qwerty_lang {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&to 1>, <&kp LC(SPACE)>;
-                };
+        dk: double_key {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            // Usage: &dk FIRST_KEY SECOND_KEY
+            // Single tap = FIRST_KEY, Double tap = SECOND_KEY
+        };
+    };
 
-                to_dvorak_lang: to_dvorak_lang {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&to 0>, <&kp LC(SPACE)>;
-                };
+    macros {
+        to_qwerty_lang: to_qwerty_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 1>, <&kp LC(SPACE)>;
         };
 
-        keymap {
-                compatible = "zmk,keymap";
+        to_dvorak_lang: to_dvorak_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&kp LC(SPACE)>;
+        };
+    };
 
-                default_layer {
+    keymap {
+        compatible = "zmk,keymap";
+
 // ┌────────┬─────┬─────┬─────┬───────┬───────┐   ┌───────┬───────┬─────┬─────┬─────┬───────┐
 // │  BOOT  │  '  │  ,  │  .  │   P   │   Y   │   │   F   │   G   │  C  │  R  │  L  │ LOCK  │
 // ├────────┼─────┼─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┼─────┼───────┤
@@ -62,49 +61,50 @@
 // └────────┴─────┴─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┴─────┴───────┘
 //                      │ FN  │ BSPC  │  SPC  │   │  ENT  │  BSPC │ NUM │
 //                      └─────┴───────┴───────┘   └───────┴───────┴─────┘
-                        display-name = "Dvorak";
-                        bindings = <
-   &bootloader    &kp SQT        &kp COMMA      &kp DOT        &kp P          &kp Y              &kp F          &kp G          &kp C          &kp R          &kp L          &kp LG(LC(Q))
-   &kp TAB        &lt 2 A        &hm LCTRL O    &hm LALT E     &hm LGUI U     &hm SHIFT I        &hm SHIFT D    &hm RGUI H     &hm RALT T     &hm RCTRL N    &lt 2 S        &kp LC(SPACE)
-   &kp ESC        &kp SEMI       &kp Q          &kp J          &kp K          &kp X              &kp B          &kp M          &kp W          &kp V          &kp Z          &to_qwerty_lang
-                                                &mo 4          &kp BSPC       &kp SPACE          &kp RET        &kp BSPC       &mo 3
-                        >;
-                };
+        default_layer {
+            display-name = "Dvorak";
+            bindings = <
+&bootloader   &kp SQT    &kp COMMA     &kp DOT      &kp P        &kp Y              &kp F         &kp G        &kp C        &kp R         &kp L     &kp LG(LC(Q))
+&kp TAB       &lt 2 A    &hm LCTRL O   &hm LALT E   &hm LGUI U   &hm LSHFT I        &hm RSHFT D   &hm RGUI H   &hm RALT T   &hm RCTRL N   &lt 2 S   &kp LC(SPACE)
+&kp ESC       &kp SEMI   &kp Q         &kp J        &kp K        &kp X              &kp B         &kp M        &kp W        &kp V         &kp Z     &to_qwerty_lang
+                                       &mo 4        &kp BSPC     &kp SPACE          &kp RET       &kp BSPC     &mo 3
+            >;
+        };
 
-                qwerty_layer {
+
 // ENGLISH LAYOUT (when OS set to English):
-// ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-// │ --- │  Q  │  W  │  E  │  R  │  T  │   │  Y  │  U  │  I  │  O  │  P  │  [  │
-// ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ TAB │  A  │  S  │  D  │  F  │  G  │   │  H  │  J  │  K  │  L  │  ;  │  '  │
-// ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ ESC │  Z  │  X  │  C  │  V  │  B  │   │  N  │ M/] │  ,  │  .  │ &/^ │D+LNG│
-// └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┴─────┴─────┼─────┴─────┴─────┘
-//                   │ FN  │BSPC │ SPC │   │ ENT │BSPC │ NUM │
-//                   │     │     │SHFT │   │SHFT │     │     │
-//                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
+// ┌─────┬─────┬─────┬─────┬─────┬──────┐   ┌──────┬─────┬─────┬─────┬─────┬─────┐
+// │ --- │  Q  │  W  │  E  │  R  │  T   │   │   Y  │  U  │  I  │  O  │  P  │  [  │
+// ├─────┼─────┼─────┼─────┼─────┼──────┤   ├──────┼─────┼─────┼─────┼─────┼─────┤
+// │ TAB │  A  │  S  │  D  │  F  │  G   │   │   H  │  J  │  K  │  L  │  ;  │  '  │
+// │     │     │     │     │     │ SHFT │   │ SHFT │     │     │     │     │     │
+// ├─────┼─────┼─────┼─────┼─────┼──────┤   ├──────┼─────┼─────┼─────┼─────┼─────┤
+// │ ESC │  Z  │  X  │  C  │  V  │  B   │   │   N  │ M/] │  ,  │  .  │ &/^ │D+LNG│
+// └─────┴─────┴─────┼─────┼─────┼──────┤   ├──────┼─────┼─────┼─────┴─────┴─────┘
+//                   │ FN  │BSPC │ SPC  │   │  ENT │BSPC │ NUM │
+//                   └─────┴─────┴──────┘   └──────┴─────┴─────┘
 //
 // RUSSIAN LAYOUT (when OS set to Russian):
-// ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
-// │ --- │  Й  │  Ц  │  У  │  К  │  Е  │   │  Н  │  Г  │  Ш  │  Щ  │  З  │  Х  │
-// ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ TAB │  Ф  │  Ы  │  В  │  А  │  П  │   │  Р  │  О  │  Л  │  Д  │  Ж  │  Э  │
-// ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
-// │ ESC │  Я  │  Ч  │  С  │  М  │  И  │   │  Т  │ ь/ъ │  Б  │  Ю  │ &/^ │D+LNG│
-// └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┴─────┴─────┼─────┴─────┴─────┘
-//                   │ FN  │BSPC │ SPC │   │ ENT │BSPC │ NUM │
-//                   │     │     │SHFT │   │SHFT │     │     │
-//                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
-                        display-name = "QWERTY";
-                        bindings = <
-   &none          &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U         &kp I        &kp O      &kp P             &kp LBKT
-   &kp TAB        &kp A          &kp S          &kp D          &kp F          &kp G              &kp H          &kp J         &kp K        &kp L      &kp SEMI          &kp SQT
-   &kp ESC        &kp Z          &kp X          &kp C          &kp V          &kp B              &kp N          &dk M RBKT    &kp COMMA    &kp DOT    &dk AMPS CARET    &to_dvorak_lang
-                                                &mo 4          &kp BSPC       &hm LSHFT SPACE    &hm RSHFT RET  &kp BSPC      &mo 3
-                        >;
-                };
+// ┌─────┬─────┬─────┬─────┬─────┬──────┐   ┌──────┬─────┬─────┬─────┬─────┬─────┐
+// │ --- │  Й  │  Ц  │  У  │  К  │  Е   │   │   Н  │  Г  │  Ш  │  Щ  │  З  │  Х  │
+// ├─────┼─────┼─────┼─────┼─────┼──────┤   ├──────┼─────┼─────┼─────┼─────┼─────┤
+// │ TAB │  Ф  │  Ы  │  В  │  А  │  П   │   │   Р  │  О  │  Л  │  Д  │  Ж  │  Э  │
+// │     │     │     │     │     │ SHFT │   │ SHFT │     │     │     │     │     │
+// ├─────┼─────┼─────┼─────┼─────┼──────┤   ├──────┼─────┼─────┼─────┼─────┼─────┤
+// │ ESC │  Я  │  Ч  │  С  │  М  │  И   │   │   Т  │ ь/ъ │  Б  │  Ю  │ &/^ │D+LNG│
+// └─────┴─────┴─────┼─────┼─────┼──────┤   ├──────┼─────┼─────┼─────┴─────┴─────┘
+//                   │ FN  │BSPC │ SPC  │   │  ENT │BSPC │ NUM │
+//                   └─────┴─────┴──────┘   └──────┴─────┴─────┘
+        qwerty_layer {
+            display-name = "QWERTY";
+            bindings = <
+&none     &kp Q   &kp W   &kp E   &kp R   &kp T      &kp Y              &kp U         &kp I       &kp O     &kp P            &kp LBKT
+&kp TAB   &kp A   &kp S   &kp D   &kp F   &kp G      &hm LSHFT H        &hm RSHFT J   &kp K       &kp L     &kp SEMI         &kp SQT
+&kp ESC   &kp Z   &kp X   &kp C   &kp V   &kp B      &kp N              &dk M RBKT    &kp COMMA   &kp DOT   &dk AMPS CARET   &to_dvorak_lang
+                                  &mo 4   &kp BSPC   &kp SPACE          &kp RET       &kp BSPC    &mo 3
+            >;
+        };
 
-                movement_layer {
 // ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
 // │ --- │ --- │ --- │ UP  │ --- │PG↑  │   │SCR↑ │ --- │ M↑  │ --- │ --- │ --- │
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -114,16 +114,16 @@
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
 //                   │ ⌘+X │ ⌘+C │ ⌘+V │   │LCLK │RCLK │MCLK │
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
-                        display-name = "Nav";
-                        bindings = <
-   &none          &none          &none          &kp UP         &none          &kp PG_UP          &msc SCRL_UP     &none            &mmv MOVE_UP     &none            &none      &none
-   &none          &none          &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN          &msc SCRL_DOWN   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &none      &none
-   &none          &none          &kp HOME       &none          &kp END        &none              &none            &msc SCRL_LEFT   &none            &msc SCRL_RIGHT  &none      &none
-                                                &kp LG(X)      &kp LG(C)      &kp LG(V)          &mkp LCLK        &mkp RCLK        &mkp MCLK
-                        >;
-                };
+        movement_layer {
+            display-name = "Nav";
+            bindings = <
+&none   &none   &none      &kp UP     &none       &kp PG_UP   &msc SCRL_UP          &none            &mmv MOVE_UP     &none             &none   &none
+&none   &none   &kp LEFT   &kp DOWN   &kp RIGHT   &kp PG_DN   &msc SCRL_DOWN        &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &none   &none
+&none   &none   &kp HOME   &none      &kp END     &none       &none                 &msc SCRL_LEFT   &none            &msc SCRL_RIGHT   &none   &none
+                                      &kp LG(X)   &kp LG(C)   &kp LG(V)             &mkp LCLK        &mkp RCLK        &mkp MCLK
+            >;
+        };
 
-                numbers_symbols_layer {
 // ┌─────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┬─────┐
 // │ --- │  !  │  @  │  #  │  $  │  %  │   │  ^  │  &  │  *  │  -  │  =  │ --- │
 // ├─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -133,16 +133,16 @@
 // └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
 //                   │ --- │ --- │ --- │   │ --- │ --- │ --- │
 //                   └─────┴─────┴─────┘   └─────┴─────┴─────┘
-                        display-name = "Numbers";
-                        bindings = <
-   &none          &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &kp PRCNT          &kp CARET      &kp AMPS       &kp ASTRK      &kp MINUS      &kp EQUAL      &none
-   &none          &kp N1         &kp N2         &kp N3         &kp N4         &kp N5             &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
-   &none          &kp FSLH       &kp LBRC       &kp LBKT       &kp LPAR       &kp GRAVE          &kp TILDE      &kp RPAR       &kp RBKT       &kp RBRC       &kp BSLH       &none
-                                                &trans         &trans         &trans             &trans         &trans         &trans
-                        >;
-                };
+        numbers_symbols_layer {
+            display-name = "Numbers";
+            bindings = <
+&none   &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT        &kp CARET   &kp AMPS   &kp ASTRK   &kp MINUS   &kp EQUAL   &none
+&none   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5           &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &none
+&none   &kp FSLH   &kp LBRC   &kp LBKT   &kp LPAR   &kp GRAVE        &kp TILDE   &kp RPAR   &kp RBKT    &kp RBRC    &kp BSLH    &none
+                              &trans     &trans     &trans           &trans      &trans     &trans
+            >;
+        };
 
-                function_media_layer {
 // ┌────────┬─────┬─────┬─────┬─────┬─────┐   ┌─────┬──────┬──────┬──────┬─────┬──────┐
 // │⌘⇧5 SCR │ F1  │ F2  │ F3  │ F4  │ F5  │   │ --- │ PREV │ PLAY │ NEXT │ --- │BT CLR│
 // ├────────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼──────┼──────┼──────┼─────┼──────┤
@@ -152,27 +152,28 @@
 // └────────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼──────┼──────┼──────┴─────┴──────┘
 //                      │ --- │ --- │ --- │   │ --- │ ---  │ ---- │
 //                      └─────┴─────┴─────┘   └─────┴──────┴──────┘
-                        display-name = "Func";
-                        bindings = <
-   &kp LG(LS(N5)) &kp F1         &kp F2         &kp F3         &kp F4         &kp F5             &none          &kp C_PREV     &kp C_PP       &kp C_NEXT     &none       &bt BT_CLR
-   &none          &kp F6         &kp F7         &kp F8         &kp F9         &kp F10            &none          &kp C_VOL_DN   &kp C_MUTE     &kp C_VOL_UP   &none       &bt BT_SEL 0
-   &none          &kp F11        &kp F12        &kp F13        &kp F14        &kp F15            &none          &kp C_BRI_DN   &none          &kp C_BRI_UP   &none       &bt BT_SEL 1
-                                                &trans         &trans         &trans             &trans         &trans         &trans
-                        >;
-                };
-
-                extra_1 {
-                        status = "reserved";
-                };
-
-                extra_2 {
-                        status = "reserved";
-                };
-
-                extra_3 {
-                        status = "reserved";
-                };
+        function_media_layer {
+            display-name = "Func";
+            bindings = <
+&kp LG(LS(N5))   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5         &none    &kp C_PREV     &kp C_PP     &kp C_NEXT     &none   &bt BT_CLR
+&none            &kp F6    &kp F7    &kp F8    &kp F9    &kp F10        &none    &kp C_VOL_DN   &kp C_MUTE   &kp C_VOL_UP   &none   &bt BT_SEL 0
+&none            &kp F11   &kp F12   &kp F13   &kp F14   &kp F15        &none    &kp C_BRI_DN   &none        &kp C_BRI_UP   &none   &bt BT_SEL 1
+                                     &trans    &trans    &trans         &trans   &trans         &trans
+            >;
         };
+
+        extra_1 {
+                status = "reserved";
+        };
+
+        extra_2 {
+                status = "reserved";
+        };
+
+        extra_3 {
+                status = "reserved";
+        };
+    };
 };
 
 // Mouse behavior overrides (must be outside the main devicetree root)
