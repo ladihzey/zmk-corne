@@ -6,4 +6,4 @@ jobs:
     # Use 'main' for latest, or a specific tag like 'v0.3.0' or commit SHA
     # To find available tags: https://github.com/zmkfirmware/zmk/tags
     # Example: uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
