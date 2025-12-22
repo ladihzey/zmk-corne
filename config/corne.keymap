@@ -24,6 +24,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        lt_mov: layer_toggle_movement {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        };
+
         ru_soft: russian_soft_hard_sign {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -70,10 +80,10 @@
         default_layer {
             display-name = "Dvorak";
             bindings = <
-&kp LG(LS(N5))   &kp SQT    &kp COMMA     &kp DOT      &kp P        &kp Y                  &kp F           &kp G        &kp C        &kp R         &kp L     &kp LG(LC(Q))
-&kp TAB          &lt 2 A    &hm LCTRL O   &hm LALT E   &hm LGUI U   &kp I                  &kp D           &hm RGUI H   &hm RALT T   &hm RCTRL N   &lt 2 S   &kp LC(SPACE)
-&kp ESC          &kp SEMI   &kp Q         &kp J        &kp K        &kp X                  &kp B           &kp M        &kp W        &kp V         &kp Z     &to_qwerty_lang
-                                          &mo 4        &kp BSPC     &hm LSHFT SPACE        &hm RSHFT RET   &kp BSPC     &mo 3
+&kp LG(LS(N5))   &kp SQT        &kp COMMA     &kp DOT      &kp P        &kp Y                  &kp F           &kp G        &kp C        &kp R         &kp L     &kp LG(LC(Q))
+&kp TAB          &lt_mov 2 A    &hm LCTRL O   &hm LALT E   &hm LGUI U   &kp I                  &kp D           &hm RGUI H   &hm RALT T   &hm RCTRL N   &lt_mov 2 S &kp LC(SPACE)
+&kp ESC          &kp SEMI       &kp Q         &kp J        &kp K        &kp X                  &kp B           &kp M        &kp W        &kp V         &kp Z     &to_qwerty_lang
+                                              &mo 4        &kp BSPC     &hm LSHFT SPACE        &hm RSHFT RET   &kp BSPC     &mo 3
             >;
         };
 
