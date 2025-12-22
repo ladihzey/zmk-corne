@@ -6,9 +6,9 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       # Pin to a specific version to avoid breaking changes
-      # Use 'main' for latest, or a specific tag like '3.2' or commit SHA
+      # Use 'main' for latest, or a specific tag like 'v0.3.0' or commit SHA
       # To find available tags: https://github.com/zmkfirmware/zmk/tags
-      revision: main
+      revision: v0.3.0
       import: app/west.yml
   self:
     path: config
