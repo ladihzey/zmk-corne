@@ -2,4 +2,8 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
+    # Pin to a specific version to avoid breaking changes
+    # Use 'main' for latest, or a specific tag like '3.2' or commit SHA
+    # To find available tags: https://github.com/zmkfirmware/zmk/tags
+    # Example: uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@3.2
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
