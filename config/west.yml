@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: ladihzey
-      url-base: https://github.com/ladihzey
+    - name: infely
+      url-base: https://github.com/infely
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
     - name: nice-view-battery
-      remote: ladihzey
-      revision: main
+      remote: infely
+      revision: a9ebccd
   self:
     path: config
