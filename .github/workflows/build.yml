@@ -24,8 +24,11 @@ jobs:
         with:
           name: firmware
 
+      - name: List downloaded files
+        run: ls -la
+
       - name: Create Release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release create ${{ github.ref_name }} *.zip --generate-notes
+        run: gh release create ${{ github.ref_name }} * --generate-notes
