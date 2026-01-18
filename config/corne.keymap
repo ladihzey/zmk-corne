@@ -64,7 +64,7 @@
 // ├─────────┼─────┼─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┼─────┼───────┤
 // │   ESC   │  ;  │  Q  │  J  │   K   │   X   │   │   B   │   M   │  W  │  V  │  Z  │ Q+LNG │
 // └─────────┴─────┴─────┼─────┼───────┼───────┤   ├───────┼───────┼─────┼─────┴─────┴───────┘
-//                       │ FN  │ BSPC  │  SPC  │   │  ENT  │  BSPC │ NUM │
+//                       │ FN  │ BSPC  │  ENT  │   │  SPC  │  BSPC │ NUM │
 //                       │     │       │ SHIFT │   │ SHIFT │       │     │
 //                       └─────┴───────┴───────┘   └───────┴───────┴─────┘
         default_layer {
@@ -73,7 +73,7 @@
 &kp LG(LS(N5))   &kp SQT        &kp COMMA     &kp DOT      &kp P        &kp Y                  &kp F           &kp G        &kp C        &kp R         &kp L         &kp LG(LC(Q))
 &kp TAB          &lt 2 A        &hm LCTRL O   &hm LALT E   &hm LGUI U   &kp I                  &kp D           &hm RGUI H   &hm RALT T   &hm RCTRL N   &lt 2 S       &kp LC(SPACE)
 &kp ESC          &kp SEMI       &kp Q         &kp J        &kp K        &kp X                  &kp B           &kp M        &kp W        &kp V         &kp Z         &to_qwerty_lang
-                                              &mo 4        &kp BSPC     &hm LSHFT SPACE        &hm RSHFT RET   &kp BSPC     &mo 3
+                                              &mo 4        &kp BSPC     &hm LSHFT RET          &hm RSHFT SPACE &kp BSPC     &mo 3
             >;
         };
 
@@ -86,7 +86,7 @@
 // ├─────┼─────┼─────┼─────┼─────┼───────┤   ├───────┼─────┼─────┼─────┼─────┼─────┤
 // │ ESC │  Z  │  X  │  C  │  V  │   B   │   │   N   │ M/] │  ,  │  .  │ &/^ │D+LNG│
 // └─────┴─────┴─────┼─────┼─────┼───────┤   ├───────┼─────┼─────┼─────┴─────┴─────┘
-//                   │ FN  │BSPC │  SPC  │   │  ENT  │BSPC │ NUM │
+//                   │ FN  │BSPC │  ENT  │   │  SPC  │BSPC │ NUM │
 //                   │     │     │ SHIFT │   │ SHIFT │     │     │
 //                   └─────┴─────┴───────┘   └───────┴─────┴─────┘
 //
@@ -98,7 +98,7 @@
 // ├─────┼─────┼─────┼─────┼─────┼───────┤   ├───────┼─────┼─────┼─────┼─────┼─────┤
 // │ ESC │  Я  │  Ч  │  С  │  М  │   И   │   │   Т   │ ь/ъ │  Б  │  Ю  │ &/^ │D+LNG│
 // └─────┴─────┴─────┼─────┼─────┼───────┤   ├───────┼─────┼─────┼─────┴─────┴─────┘
-//                   │ FN  │BSPC │  SPC  │   │  ENT  │BSPC │ NUM │
+//                   │ FN  │BSPC │  ENT  │   │  SPC  │BSPC │ NUM │
 //                   │     │     │ SHIFT │   │ SHIFT │     │     │
 //                   └─────┴─────┴───────┘   └───────┴─────┴─────┘
         qwerty_layer {
@@ -107,7 +107,7 @@
 &none     &kp Q   &kp W   &kp E   &kp R   &kp T      &kp Y                  &kp U           &kp I       &kp O     &kp P       &kp LBKT
 &kp TAB   &kp A   &kp S   &kp D   &kp F   &kp G      &kp H                  &kp J           &kp K       &kp L     &kp SEMI    &kp SQT
 &kp ESC   &kp Z   &kp X   &kp C   &kp V   &kp B      &kp N                  &ru_soft        &kp COMMA   &kp DOT   &ru_punct   &to_dvorak_lang
-                                  &mo 4   &kp BSPC   &hm LSHFT SPACE        &hm RSHFT RET   &kp BSPC    &mo 3
+                                  &mo 4   &kp BSPC   &hm LSHFT RET          &hm RSHFT SPACE &kp BSPC    &mo 3
             >;
         };
 
