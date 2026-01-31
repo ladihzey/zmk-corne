@@ -71,7 +71,7 @@
             display-name = "Dvorak";
             bindings = <
 &kp LG(LS(N5))   &kp SQT        &kp COMMA     &kp DOT      &kp P        &kp Y                  &kp F           &kp G        &kp C        &kp R         &kp L         &kp LG(LC(Q))
-&kp TAB          &lt 2 A        &hm LCTRL O   &hm LALT E   &hm LGUI U   &kp I                  &kp D           &hm RGUI H   &hm RALT T   &hm RCTRL N   &lt 2 S       &kp LC(SPACE)
+&kp TAB          &kp A          &hm LCTRL O   &hm LALT E   &hm LGUI U   &kp I                  &kp D           &hm RGUI H   &hm RALT T   &hm RCTRL N   &lt 2 S       &kp LC(SPACE)
 &kp ESC          &kp SEMI       &kp Q         &kp J        &kp K        &kp X                  &kp B           &kp M        &kp W        &kp V         &kp Z         &to_qwerty_lang
                                               &mo 4        &kp BSPC     &hm LSHFT RET          &hm RSHFT SPACE &kp BSPC     &mo 3
             >;
